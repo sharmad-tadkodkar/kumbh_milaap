@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ffmpeg -version)",
+      "Bash(curl -sI https://github.com --max-time 10)"
+    ]
+  }
+}
