@@ -1,0 +1,14 @@
+# Frontend is deployed separately (Vercel) — keep it out of the backend image.
+web/
+.git/
+.claude/
+
+# Large/irrelevant sample assets not needed by the API.
+assets/sample_*
+assets/sample_vid.mp4
+*.kml
+
+# Python / OS cruft.
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,9 @@
+# Render blueprint for the Milaap face-search API.
+# Render auto-detects the root Dockerfile; this just pins the free plan + health check.
+services:
+  - type: web
+    name: kumbh-milaap-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true

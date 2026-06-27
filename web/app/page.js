@@ -28,7 +28,14 @@ export default function Home() {
 
     const startedAt = Date.now();
     try {
-      const res = await fetch("/api/search", { method: "POST", body: fd });
+      // In split deploys (Vercel frontend + Render backend) the browser calls
+      // the Render API directly via NEXT_PUBLIC_API_URL — this avoids Vercel's
+      // 60s function timeout on long face scans. Unset = same-origin (local dev).
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
+      const res = await fetch(`${apiBase}/api/search`, {
+        method: "POST",
+        body: fd,
+      });
       const data = await res.json();
       // keep the loading animation visible for a graceful minimum duration
       const elapsed = Date.now() - startedAt;
