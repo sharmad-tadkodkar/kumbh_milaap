@@ -1,0 +1,7 @@
+# Backend web-service deps (Render / Docker).
+# Headless OpenCV — no GUI libs needed on a server.
+opencv-python-headless>=4.5.4
+numpy
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
